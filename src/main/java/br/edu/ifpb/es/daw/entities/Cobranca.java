@@ -1,0 +1,105 @@
+package br.edu.ifpb.es.daw.entities;
+
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Objects;
+
+/**
+ * Cobrança gerada automaticamente ao criar um contrato.
+ *
+ * - status String: "pendente", "pago" ou "atrasado" — boolean não
+ *   consegue representar três estados.
+ * - dataPagamento é nullable: só é preenchida quando o aluno efetua
+ *   o pagamento; antes disso, o campo fica em branco.
+ * - valor usa BigDecimal: evita erros de arredondamento com dinheiro.
+ * - contratoId armazena o ID do contrato pai (sem @ManyToOne por ora).
+ */
+@Entity
+@Table(name = "cobranca")
+public class Cobranca {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+
+    /**
+     * ID do contrato ao qual esta cobrança pertence.
+     * Relacionamento será mapeado com @ManyToOne em etapa futura.
+     */
+    @Column(nullable = false)
+    private int contratoId;
+
+    @Column(nullable = false)
+    private LocalDate dataVencimento;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal valor;
+
+    /**
+     * Preenchida apenas após o pagamento. Pode ser null.
+     */
+    @Column
+    private LocalDate dataPagamento;
+
+    @Column(length = 30)
+    private String formaPagamento;
+
+    /**
+     * "pendente", "pago" ou "atrasado".
+     * Atualizado automaticamente conforme as datas de vencimento.
+     */
+    @Column(nullable = false, length = 10)
+    private String status;
+
+    // --- Getters e Setters ---
+
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
+
+    public int getContratoId() { return contratoId; }
+    public void setContratoId(int contratoId) { this.contratoId = contratoId; }
+
+    public LocalDate getDataVencimento() { return dataVencimento; }
+    public void setDataVencimento(LocalDate dataVencimento) { this.dataVencimento = dataVencimento; }
+
+    public BigDecimal getValor() { return valor; }
+    public void setValor(BigDecimal valor) { this.valor = valor; }
+
+    public LocalDate getDataPagamento() { return dataPagamento; }
+    public void setDataPagamento(LocalDate dataPagamento) { this.dataPagamento = dataPagamento; }
+
+    public String getFormaPagamento() { return formaPagamento; }
+    public void setFormaPagamento(String formaPagamento) { this.formaPagamento = formaPagamento; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    // --- equals, hashCode e toString ---
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Cobranca cobranca = (Cobranca) o;
+        return id == cobranca.id;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return "Cobranca{" +
+                "id=" + id +
+                ", contratoId=" + contratoId +
+                ", dataVencimento=" + dataVencimento +
+                ", valor=" + valor +
+                ", dataPagamento=" + dataPagamento +
+                ", formaPagamento='" + formaPagamento + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
+}
