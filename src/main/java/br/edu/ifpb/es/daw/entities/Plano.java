@@ -21,7 +21,7 @@ public class Plano {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     /**
      * Valores esperados: diario, mensal, trimestral, semestral, anual.
@@ -33,7 +33,7 @@ public class Plano {
     private BigDecimal valor;
 
     @Column(nullable = false)
-    private int duracao;
+    private Integer duracao;
 
     @Column(precision = 5, scale = 2)
     private BigDecimal percentualDesconto;
@@ -43,8 +43,8 @@ public class Plano {
 
     // --- Getters e Setters ---
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getTipo() { return tipo; }
     public void setTipo(String tipo) { this.tipo = tipo; }
@@ -52,8 +52,8 @@ public class Plano {
     public BigDecimal getValor() { return valor; }
     public void setValor(BigDecimal valor) { this.valor = valor; }
 
-    public int getDuracao() { return duracao; }
-    public void setDuracao(int duracao) { this.duracao = duracao; }
+    public Integer getDuracao() { return duracao; }
+    public void setDuracao(Integer duracao) { this.duracao = duracao; }
 
     public BigDecimal getPercentualDesconto() { return percentualDesconto; }
     public void setPercentualDesconto(BigDecimal percentualDesconto) { this.percentualDesconto = percentualDesconto; }

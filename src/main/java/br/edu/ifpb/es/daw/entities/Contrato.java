@@ -25,28 +25,28 @@ public class Contrato {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     /**
      * ID do aluno vinculado a este contrato.
      * Relacionamento será mapeado com @ManyToOne em etapa futura.
      */
     @Column(nullable = false)
-    private int alunoId;
+    private Integer alunoId;
 
     /**
      * ID da unidade de origem deste contrato.
      * Relacionamento será mapeado com @ManyToOne em etapa futura.
      */
     @Column(nullable = false)
-    private int unidadeId;
+    private Integer unidadeId;
 
     /**
      * ID do plano escolhido neste contrato.
      * Relacionamento será mapeado com @ManyToOne em etapa futura.
      */
     @Column(nullable = false)
-    private int planoId;
+    private Integer planoId;
 
     @Column(nullable = false)
     private LocalDate dataInicio;
@@ -63,17 +63,17 @@ public class Contrato {
 
     // --- Getters e Setters ---
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public int getAlunoId() { return alunoId; }
-    public void setAlunoId(int alunoId) { this.alunoId = alunoId; }
+    public Integer getAlunoId() { return alunoId; }
+    public void setAlunoId(Integer alunoId) { this.alunoId = alunoId; }
 
-    public int getUnidadeId() { return unidadeId; }
-    public void setUnidadeId(int unidadeId) { this.unidadeId = unidadeId; }
+    public Integer getUnidadeId() { return unidadeId; }
+    public void setUnidadeId(Integer unidadeId) { this.unidadeId = unidadeId; }
 
-    public int getPlanoId() { return planoId; }
-    public void setPlanoId(int planoId) { this.planoId = planoId; }
+    public Integer getPlanoId() { return planoId; }
+    public void setPlanoId(Integer planoId) { this.planoId = planoId; }
 
     public LocalDate getDataInicio() { return dataInicio; }
     public void setDataInicio(LocalDate dataInicio) { this.dataInicio = dataInicio; }

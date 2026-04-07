@@ -17,7 +17,7 @@ public class Aluno {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(nullable = false)
     private String nome;
@@ -36,12 +36,12 @@ public class Aluno {
      * Inativado automaticamente ao cancelar contrato.
      */
     @Column(nullable = false)
-    private boolean status;
+    private Boolean status;
 
     // --- Getters e Setters ---
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
     public String getNome() { return nome; }
     public void setNome(String nome) { this.nome = nome; }
@@ -55,8 +55,8 @@ public class Aluno {
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 
-    public boolean isStatus() { return status; }
-    public void setStatus(boolean status) { this.status = status; }
+    public Boolean isStatus() { return status; }
+    public void setStatus(Boolean status) { this.status = status; }
 
     // --- equals, hashCode e toString ---
 

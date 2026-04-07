@@ -21,14 +21,14 @@ public class Cobranca {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     /**
      * ID do contrato ao qual esta cobrança pertence.
      * Relacionamento será mapeado com @ManyToOne em etapa futura.
      */
     @Column(nullable = false)
-    private int contratoId;
+    private Integer contratoId;
 
     @Column(nullable = false)
     private LocalDate dataVencimento;
@@ -54,11 +54,11 @@ public class Cobranca {
 
     // --- Getters e Setters ---
 
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public Integer getId() { return id; }
+    public void setId(Integer id) { this.id = id; }
 
-    public int getContratoId() { return contratoId; }
-    public void setContratoId(int contratoId) { this.contratoId = contratoId; }
+    public Integer getContratoId() { return contratoId; }
+    public void setContratoId(Integer contratoId) { this.contratoId = contratoId; }
 
     public LocalDate getDataVencimento() { return dataVencimento; }
     public void setDataVencimento(LocalDate dataVencimento) { this.dataVencimento = dataVencimento; }
