@@ -2,6 +2,7 @@ package br.edu.ifpb.es.daw;
 
 import br.edu.ifpb.es.daw.dao.impl.CobrancaDAOImpl;
 import br.edu.ifpb.es.daw.entities.Cobranca;
+import br.edu.ifpb.es.daw.entities.StatusCobranca;
 import br.edu.ifpb.es.daw.util.EMFUtil;
 import jakarta.persistence.EntityManagerFactory;
 import java.math.BigDecimal;
@@ -22,7 +23,7 @@ public class MainCobrancaSave {
             // dataPagamento null: ainda não foi paga
             cobranca.setDataPagamento(null);
             cobranca.setFormaPagamento(null);
-            cobranca.setStatus("pendente");
+            cobranca.setStatus(StatusCobranca.PENDENTE);
 
             dao.save(cobranca);
 

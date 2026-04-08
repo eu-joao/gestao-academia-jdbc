@@ -46,11 +46,12 @@ public class Cobranca {
     private String formaPagamento;
 
     /**
-     * "pendente", "pago" ou "atrasado".
+     * PENDENTE, PAGO ou ATRASADO.
      * Atualizado automaticamente conforme as datas de vencimento.
      */
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
-    private String status;
+    private StatusCobranca status;
 
     // --- Getters e Setters ---
 
@@ -72,8 +73,8 @@ public class Cobranca {
     public String getFormaPagamento() { return formaPagamento; }
     public void setFormaPagamento(String formaPagamento) { this.formaPagamento = formaPagamento; }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public StatusCobranca getStatus() { return status; }
+    public void setStatus(StatusCobranca status) { this.status = status; }
 
     // --- equals, hashCode e toString ---
 
@@ -99,7 +100,7 @@ public class Cobranca {
                 ", valor=" + valor +
                 ", dataPagamento=" + dataPagamento +
                 ", formaPagamento='" + formaPagamento + '\'' +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 '}';
     }
 }

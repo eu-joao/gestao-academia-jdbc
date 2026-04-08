@@ -24,10 +24,11 @@ public class Plano {
     private Integer id;
 
     /**
-     * Valores esperados: diario, mensal, trimestral, semestral, anual.
+     * Valores: DIARIO, MENSAL, TRIMESTRAL, SEMESTRAL, ANUAL.
      */
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 20)
-    private String tipo;
+    private TipoPlano tipo;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal valor;
@@ -46,8 +47,8 @@ public class Plano {
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
 
-    public String getTipo() { return tipo; }
-    public void setTipo(String tipo) { this.tipo = tipo; }
+    public TipoPlano getTipo() { return tipo; }
+    public void setTipo(TipoPlano tipo) { this.tipo = tipo; }
 
     public BigDecimal getValor() { return valor; }
     public void setValor(BigDecimal valor) { this.valor = valor; }
@@ -80,7 +81,7 @@ public class Plano {
     public String toString() {
         return "Plano{" +
                 "id=" + id +
-                ", tipo='" + tipo + '\'' +
+                ", tipo=" + tipo +
                 ", valor=" + valor +
                 ", duracao=" + duracao +
                 ", percentualDesconto=" + percentualDesconto +

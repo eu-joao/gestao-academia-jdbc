@@ -2,6 +2,7 @@ package br.edu.ifpb.es.daw;
 
 import br.edu.ifpb.es.daw.dao.impl.ContratoDAOImpl;
 import br.edu.ifpb.es.daw.entities.Contrato;
+import br.edu.ifpb.es.daw.entities.StatusContrato;
 import br.edu.ifpb.es.daw.util.EMFUtil;
 import jakarta.persistence.EntityManagerFactory;
 import java.time.LocalDate;
@@ -20,7 +21,7 @@ public class MainContratoSave {
             contrato.setPlanoId(1);
             contrato.setDataInicio(LocalDate.now());
             contrato.setDataTermino(LocalDate.now().plusDays(30));
-            contrato.setStatus("ativo");
+            contrato.setStatus(StatusContrato.ATIVO);
 
             dao.save(contrato);
 

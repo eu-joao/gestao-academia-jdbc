@@ -55,11 +55,12 @@ public class Contrato {
     private LocalDate dataTermino;
 
     /**
-     * "ativo" ou "cancelado".
+     * ATIVO ou CANCELADO.
      * Cancelar um contrato inativa automaticamente o aluno.
      */
+    @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
-    private String status;
+    private StatusContrato status;
 
     // --- Getters e Setters ---
 
@@ -81,8 +82,8 @@ public class Contrato {
     public LocalDate getDataTermino() { return dataTermino; }
     public void setDataTermino(LocalDate dataTermino) { this.dataTermino = dataTermino; }
 
-    public String getStatus() { return status; }
-    public void setStatus(String status) { this.status = status; }
+    public StatusContrato getStatus() { return status; }
+    public void setStatus(StatusContrato status) { this.status = status; }
 
     // --- equals, hashCode e toString ---
 
@@ -108,7 +109,7 @@ public class Contrato {
                 ", planoId=" + planoId +
                 ", dataInicio=" + dataInicio +
                 ", dataTermino=" + dataTermino +
-                ", status='" + status + '\'' +
+                ", status=" + status +
                 '}';
     }
 }
