@@ -15,10 +15,7 @@ public class MainContratoSave {
             ContratoDAOImpl dao = new ContratoDAOImpl(emf);
 
             Contrato contrato = new Contrato();
-            // IDs fictícios — nesta fase não há FK mapeada ainda
-            contrato.setAlunoId(1);
-            contrato.setUnidadeId(1);
-            contrato.setPlanoId(1);
+            // Nesta fase, sem relacionamentos mapeados
             contrato.setDataInicio(LocalDate.now());
             contrato.setDataTermino(LocalDate.now().plusDays(30));
             contrato.setStatus(StatusContrato.ATIVO);

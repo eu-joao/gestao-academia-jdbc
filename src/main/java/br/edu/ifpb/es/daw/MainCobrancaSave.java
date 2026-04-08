@@ -16,8 +16,7 @@ public class MainCobrancaSave {
             CobrancaDAOImpl dao = new CobrancaDAOImpl(emf);
 
             Cobranca cobranca = new Cobranca();
-            // ID fictício — FK será mapeada em etapa futura
-            cobranca.setContratoId(1);
+            // Nesta fase, sem relacionamentos mapeados
             cobranca.setDataVencimento(LocalDate.now().plusDays(30));
             cobranca.setValor(new BigDecimal("99.90"));
             // dataPagamento null: ainda não foi paga

@@ -13,7 +13,6 @@ import java.util.Objects;
  * - dataPagamento é nullable: só é preenchida quando o aluno efetua
  *   o pagamento; antes disso, o campo fica em branco.
  * - valor usa BigDecimal: evita erros de arredondamento com dinheiro.
- * - contratoId armazena o ID do contrato pai (sem @ManyToOne por ora).
  */
 @Entity
 @Table(name = "cobranca")
@@ -22,13 +21,6 @@ public class Cobranca {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    /**
-     * ID do contrato ao qual esta cobrança pertence.
-     * Relacionamento será mapeado com @ManyToOne em etapa futura.
-     */
-    @Column(nullable = false)
-    private Integer contratoId;
 
     @Column(nullable = false)
     private LocalDate dataVencimento;
@@ -57,9 +49,6 @@ public class Cobranca {
 
     public Integer getId() { return id; }
     public void setId(Integer id) { this.id = id; }
-
-    public Integer getContratoId() { return contratoId; }
-    public void setContratoId(Integer contratoId) { this.contratoId = contratoId; }
 
     public LocalDate getDataVencimento() { return dataVencimento; }
     public void setDataVencimento(LocalDate dataVencimento) { this.dataVencimento = dataVencimento; }
@@ -95,7 +84,6 @@ public class Cobranca {
     public String toString() {
         return "Cobranca{" +
                 "id=" + id +
-                ", contratoId=" + contratoId +
                 ", dataVencimento=" + dataVencimento +
                 ", valor=" + valor +
                 ", dataPagamento=" + dataPagamento +
