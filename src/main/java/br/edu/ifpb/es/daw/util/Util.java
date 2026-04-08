@@ -2,6 +2,7 @@ package br.edu.ifpb.es.daw.util;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 
 public class Util {
 
@@ -29,6 +30,11 @@ public class Util {
 		long min = 1000000000000000L;
 		long max = 9999999999999999L;
 		return (long) Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+	public static String generateUniqueString(int length) {
+		String uuid = UUID.randomUUID().toString().replace("-", "");
+		return uuid.substring(0, Math.min(length, uuid.length()));
 	}
 
 }

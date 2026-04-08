@@ -3,6 +3,7 @@ package br.edu.ifpb.es.daw;
 import br.edu.ifpb.es.daw.dao.impl.UnidadeDAOImpl;
 import br.edu.ifpb.es.daw.entities.Unidade;
 import br.edu.ifpb.es.daw.util.EMFUtil;
+import br.edu.ifpb.es.daw.util.Util;
 import jakarta.persistence.EntityManagerFactory;
 
 public class MainUnidadeSave {
@@ -16,8 +17,8 @@ public class MainUnidadeSave {
             unidade.setNome("Academia Central");
             unidade.setEndereco("Rua das Flores, 123 - Esperança/PB");
             // nanoTime garante CNPJ e telefone únicos a cada execução
-            unidade.setCnpj("" + System.nanoTime());
-            unidade.setTelefone("" + System.nanoTime());
+            unidade.setCnpj(Util.generateUniqueString(14));
+            unidade.setTelefone(Util.generateUniqueString(20));
 
             dao.save(unidade);
 

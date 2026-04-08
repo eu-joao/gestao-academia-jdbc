@@ -3,6 +3,7 @@ package br.edu.ifpb.es.daw;
 import br.edu.ifpb.es.daw.dao.impl.AlunoDAOImpl;
 import br.edu.ifpb.es.daw.entities.Aluno;
 import br.edu.ifpb.es.daw.util.EMFUtil;
+import br.edu.ifpb.es.daw.util.Util;
 import jakarta.persistence.EntityManagerFactory;
 
 public class MainAlunoSave {
@@ -15,9 +16,9 @@ public class MainAlunoSave {
             Aluno aluno = new Aluno();
             aluno.setNome("João Silva");
             // CPF, telefone e email únicos a cada execução
-            aluno.setCpf("" + System.nanoTime());
-            aluno.setTelefone("" + System.nanoTime());
-            aluno.setEmail(System.nanoTime() + "@email.com");
+            aluno.setCpf(Util.generateUniqueString(11));
+            aluno.setTelefone(Util.generateUniqueString(20));
+            aluno.setEmail(Util.generateUniqueString(20) + "@email.com");
             aluno.setStatus(true); // ativo
 
             dao.save(aluno);

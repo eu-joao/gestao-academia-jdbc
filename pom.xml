@@ -86,12 +86,13 @@
 						</goals>
 					</execution>
 				</executions>
+			</plugin>
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
 				<version>3.1.0</version>
 				<configuration>
-					<mainClass>br.edu.ifpb.es.daw.MainPlanoSave</mainClass>
+					<!-- mainClass será passado via -Dexec.mainClass na linha de comando -->
 				</configuration>
 			</plugin>
 		</plugins>
