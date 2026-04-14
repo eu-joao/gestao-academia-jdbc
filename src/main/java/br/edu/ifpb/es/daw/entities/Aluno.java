@@ -31,13 +31,6 @@ public class Aluno {
     @Column(nullable = false, unique = true)
     private String email;
 
-    /**
-     * true = ativo, false = inativo.
-     * Inativado automaticamente ao cancelar contrato.
-     */
-    @Column(nullable = false)
-    private Boolean status;
-
     // --- Getters e Setters ---
 
     public Integer getId() { return id; }
@@ -54,9 +47,6 @@ public class Aluno {
 
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
-
-    public Boolean isStatus() { return status; }
-    public void setStatus(Boolean status) { this.status = status; }
 
     // --- equals, hashCode e toString ---
 
