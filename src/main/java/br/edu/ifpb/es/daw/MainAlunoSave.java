@@ -19,7 +19,6 @@ public class MainAlunoSave {
             aluno.setCpf(Util.generateUniqueString(11));
             aluno.setTelefone(Util.generateUniqueString(20));
             aluno.setEmail(Util.generateUniqueString(20) + "@email.com");
-            aluno.setStatus(true); // ativo
 
             dao.save(aluno);
 
