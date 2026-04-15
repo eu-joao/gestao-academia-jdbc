@@ -71,7 +71,6 @@ public class Aluno {
                 ", cpf='" + cpf + '\'' +
                 ", telefone='" + telefone + '\'' +
                 ", email='" + email + '\'' +
-                ", status=" + status +
                 '}';
     }
 }
