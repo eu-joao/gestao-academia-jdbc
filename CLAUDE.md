@@ -8,6 +8,20 @@ Plataforma centralizada de controle financeiro e de acesso físico para uma rede
 
 **Fora do escopo:** treinos, agendamentos, funcionários, modalidades online ou consultoria.
 
+## Identificação
+
+- **Disciplina:** Desenvolvimento de Aplicações Web II (DAW2)
+- **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia da Paraíba (IFPB) — Campus Esperança
+- **Curso:** Análise e Desenvolvimento de Sistemas
+- **Grupo:** Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Arley Andrey Alves Pereira, Miguel Rodrigo da Silva Normando
+
+## Stack Tecnológica
+
+- **Linguagem:** Java
+- **Build:** Maven
+- **Paradigma:** Orientação a Objetos (OO)
+- **Banco de dados:** PostgreSQL
+
 ## Entidades e atributos
 
 | Entidade  | Atributos                                                                              |
@@ -20,28 +34,19 @@ Plataforma centralizada de controle financeiro e de acesso físico para uma rede
 
 ## Regras de negócio
 
-- Planos predefinidos: diário, mensal, trimestral, semestral, anual — sem customização por contrato
-- Descontos progressivos para planos mais longos, aplicados automaticamente
-- Aluno não tem unidade fixa; a unidade fica no Contrato (permite multi-unidade e preserva histórico)
-- Um aluno só pode ter um contrato ativo por vez
-- Renovação = novo contrato; nunca modifica o existente
-- Cancelamento de contrato inativa o aluno automaticamente e bloqueia a catraca
-- Carência de 2 dias após vencimento da cobrança antes do bloqueio automático na catraca
-- Cobranças geradas automaticamente ao criar o contrato para todo o período
-- Notificações via WhatsApp automáticas: vencimento próximo e cobrança atrasada
+1. **Planos predefinidos:** diário, mensal, trimestral, semestral, anual. Não podem ser criados por unidade nem ter valor alterado por contrato.
+2. **Desconto progressivo:** planos mais longos têm desconto embutido, aplicado automaticamente.
+3. **Aluno não vinculado a unidade fixa:** a unidade fica no `Contrato`, não no `Aluno`. Isso permite frequentar unidades diferentes ao longo do tempo e preserva o histórico.
+4. **Contrato único ativo:** um aluno não pode ter mais de um contrato ativo simultaneamente.
+5. **Renovação = novo contrato:** nunca modifica o contrato existente; cria um novo, preservando histórico.
+6. **Cancelamento de contrato:** inativa automaticamente o aluno e bloqueia o acesso na catraca.
+7. **Carência de 2 dias:** após vencimento da cobrança, o acesso permanece liberado por até 2 dias antes do bloqueio automático.
+8. **Geração automática de cobranças:** ao criar o contrato, o sistema gera todas as cobranças do período.
+9. **Notificações via WhatsApp:** disparadas automaticamente para vencimento próximo e cobrança atrasada.
+10. **Acesso na catraca:** liberado somente com contrato ativo + sem cobranças atrasadas (respeitando carência).
 
 ## Decisões de modelagem
 
 - Sem relacionamentos N:N no modelo conceitual
 - FK pertencem ao modelo lógico/físico, não ao MER
-- Entidade `Visita` (log de presença) foi considerada e rejeitada — fora do escopo
 - Notação de cardinalidade (min, max) posicionada no lado oposto à entidade descrita
-
-## Estado atual
-
-- [x] Minimundo v3 finalizado
-- [x] Modelo conceitual (MER/DER) no draw.io
-- [x] Repositório GitHub criado
-- [ ] Estrutura técnica do projeto (aguardando orientação do professor)
-- [ ] Modelo lógico / físico
-- [ ] Implementação
