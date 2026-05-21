@@ -45,3 +45,8 @@ Plataforma centralizada de controle financeiro e de acesso físico para uma rede
 - [ ] Estrutura técnica do projeto (aguardando orientação do professor)
 - [ ] Modelo lógico / físico
 - [ ] Implementação
+
+## Skills
+
+@.claude/skills/terminal-output-style/SKILL.md
+@.claude/skills/formatacao-academica-ifpb/SKILL.md
