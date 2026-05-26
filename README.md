@@ -25,5 +25,5 @@ O **Sistema de Gestão de Academia** é uma solução integrada projetada para c
 
 Para detalhes completos sobre o domínio, regras de negócio e especificações técnicas, consulte os seguintes documentos:
 
-- [Minimundo Completo](docs/minimundo.md)
-- [Documento de Requisitos](docs/requisitos.md)
+- [Minimundo Completo](docs/MINIMUNDO_V4.md)
+- [Documento de Requisitos](docs/REQUISITOS_V1.md)
