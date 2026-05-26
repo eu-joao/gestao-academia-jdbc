@@ -1,35 +1,29 @@
-# Sistema de Gestão de Academia
+# Minimundo — Sistema de Gestão de Academia 
 
-Projeto acadêmico desenvolvido para a disciplina de **Desenvolvimento de Aplicações Web II (DAW2)**
-no IFPB — Campus Esperança.
+**Instituto Federal de Educação, Ciência e Tecnologia da Paraíba**
+Campus Esperança
+Curso de Análise e Desenvolvimento de Sistemas
 
-**Grupo:** Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Arley Andrey Alves Pereira, Miguel Rodrigo da Silva Normando
+Disciplina: Desenvolvimento de Aplicações Web II
+Grupo: Samuel Cláudio Duarte Lima, João Augusto Silva de Araújo, Arley Andrey Alves Pereira, Miguel Rodrigo da Silva Normando
 
 ---
 
-## Sobre o sistema
+## Visão Geral do Sistema 
 
-Plataforma centralizada de controle financeiro e de acesso físico para uma rede de academias de ginástica. O sistema integra gestão de cobranças e mensalidades com controle de catraca por unidade.
+O **Sistema de Gestão de Academia** é uma solução integrada projetada para centralizar o controle financeiro, o acesso físico e a prescrição de treinos em redes de academias. O sistema gerencia múltiplas unidades físicas com uma base de dados unificada, permitindo que alunos matriculados em qualquer unidade tenham seus dados e situação financeira acessíveis em toda a rede. A solução automatiza a geração de cobranças, o controle de acesso via catraca, a prescrição personalizada de treinos e o envio de notificações via WhatsApp, eliminando inconsistências em pagamentos e padronizando a experiência do aluno.
 
-**Fora do escopo:** controle de treinos, agendamentos, cadastro de funcionários e modalidades online.
+![Diagrama Conceitual](docs/DIAGRAMA_CONCEITUAL.png)
+*Diagrama Conceitual do Sistema*
 
-## Stack
+![Modelo Lógico](docs/MODELO_LOGICO.png)
+*Modelo Entidade Relacionamento*
 
-- Java + Maven
-- Banco de dados relacional
-- Orientação a Objetos
+---
 
-## Modelo Conceitual (MER)
+## Mais Informações 
 
-![Diagrama Entidade-Relacionamento](docs/diagrama-conceitual.png)
+Para detalhes completos sobre o domínio, regras de negócio e especificações técnicas, consulte os seguintes documentos:
 
-O modelo contempla as entidades **Unidade**, **Aluno**, **Plano**, **Contrato** e **Cobrança**.
-Principais decisões de modelagem:
-
-- O aluno não está vinculado a uma unidade fixa — a unidade fica registrada no contrato, permitindo que o aluno frequente diferentes unidades ao longo do tempo.
-- Renovações geram um novo contrato, preservando o histórico.
-- Não há relacionamentos N:N no modelo conceitual.
-
-## Documentação
-
-- [`docs/Minimundo_DAW2_v3.docx`](docs/Minimundo_DAW2_v3.docx) — descrição completa do domínio e regras de negócio.
+- [Minimundo Completo](docs/minimundo.md)
+- [Documento de Requisitos](docs/requisitos.md)
