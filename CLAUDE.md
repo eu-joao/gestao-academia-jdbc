@@ -50,3 +50,8 @@ Plataforma centralizada de controle financeiro e de acesso físico para uma rede
 - Sem relacionamentos N:N no modelo conceitual
 - FK pertencem ao modelo lógico/físico, não ao MER
 - Notação de cardinalidade (min, max) posicionada no lado oposto à entidade descrita
+
+## Skills
+
+@.claude/skills/terminal-output-style/SKILL.md
+@.claude/skills/formatacao-academica-ifpb/SKILL.md
